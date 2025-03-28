@@ -1,0 +1,1 @@
+print("Hello, let's help you calculate that tip!")
