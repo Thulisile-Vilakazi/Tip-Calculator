@@ -14,16 +14,21 @@ def calculate_per_person_amount(total_amount, num_people):
     """Pure function to calculate amount per person"""
     return round(total_amount / num_people, 2)
 
-print("Hello, let's help you calculate your total bill including that tip! ")
+def main():
+    """Main function to orchestrate the program flow"""
+    print("Hello, let's help you calculate your total bill including that tip!")
+    
+    # Get inputs using pure functions
+    total_bill = get_input("How much was the total bill? R ", float)
+    percentage_tip = get_input("What percentage tip would you like to give? (Only input numbers) ", int)
+    split = get_input("How many people are splitting the bill? ", int)
+    
+    # Perform calculations using pure functions
+    bill_with_tip = calculate_total_with_tip(total_bill, percentage_tip)
+    bill_per_person = calculate_per_person_amount(bill_with_tip, split)
+    
+    # Output the result
+    print(f"The total bill per person is R{bill_per_person}.")
 
-total_bill = float(input("How much was the total bill? R "))
-
-percentage_tip = int(input("What percentage tip would you like to give?(Only input numbers and not the percent(%) symbol "))
-
-split = int(input("How many people are splitting the bill? "))
-
-bill_with_tip = percentage_tip/100 * total_bill + total_bill
-
-bill_per_person = round(bill_with_tip/split,2)
-
-print(f"The total bill is R{bill_per_person}.")
+if __name__ == "__main__":
+    main()
