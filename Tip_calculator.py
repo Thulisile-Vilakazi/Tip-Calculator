@@ -10,6 +10,10 @@ def calculate_total_with_tip(bill_amount, tip_percent):
     """Pure function to calculate total with tip"""
     return bill_amount * (1 + tip_percent / 100)
 
+def calculate_per_person_amount(total_amount, num_people):
+    """Pure function to calculate amount per person"""
+    return round(total_amount / num_people, 2)
+
 print("Hello, let's help you calculate your total bill including that tip! ")
 
 total_bill = float(input("How much was the total bill? R "))
